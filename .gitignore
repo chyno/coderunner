@@ -1,0 +1,14 @@
+node_modules
+public/main.js
+.DS_STORE
+dist
+Obj
+bin
+.editorconfig
+
+### VisualStudioCode ###
+.vscode
+
+ 
+
+
