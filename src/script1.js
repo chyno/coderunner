@@ -1,1 +1,1 @@
-document.write('hello world');
+module.exports =  'this is script 1';
