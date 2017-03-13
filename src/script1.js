@@ -1,1 +1,0 @@
-module.exports =  'this is script 1';

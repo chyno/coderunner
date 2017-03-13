@@ -1,4 +1,5 @@
-import {Kata} from '../src/kata';
+const Codeservice  =  require('../codeservice');
+
 //"use strict";
 //const path = require('path');
  
@@ -19,11 +20,13 @@ describe('In order to Save a kata ', () => {
   let sut;
   
   beforeEach(() => {
-    sut = new Kata();
+     sut = Codeservice.addTwo(10);
+    //let sut = k.getDoc()
   });
 
-  it('kata  is not', () => {
-    expect(sut.message).toBeDefined();
+  it('test module loading', () => {
+   
+    expect(sut).toEqual(12);
   });
 
 });

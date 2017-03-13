@@ -5,8 +5,8 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     main: [
-      './src/script1.js',
-      './src/script2.js'
+      './src/kata.js',
+      './src/doclib.js'
     ]
   },
   output: {
