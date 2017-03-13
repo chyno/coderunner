@@ -17,7 +17,7 @@ exports.addUser = R.curry((usr, kt) => {
     wusr.tests = usr.tests;
   }
   else {
-     kt.users.push(usr);  
+     kt.users.push(usr);
   }
   return kt;
 });
@@ -40,9 +40,4 @@ const log = R.curry((prefix, data) => console.log(prefix, data));
 
 //R.compose(addUser(user),addUserArray, getKata('kata 2'))(katas)
 //export { getKata, addUserArray, addUser, log, getUserCodeOrDefault };
- 
 
-
-exports.addTwo = function(x) {
-  return  R.add(x, 2);
-};
