@@ -1,8 +1,8 @@
 'use strict'
 const R = require('Ramda');
 
-exports.KataService = function (db) {
-  this.db = db;
+exports.KataService = function () {
+  
   const getKata = (name) => R.find(x => x.name === name);
   const addUserArray = R.unless(R.propIs(Array, 'users'), R.assoc('users', []));
 
@@ -38,7 +38,7 @@ exports.KataService = function (db) {
       return kt;
     }),
 
-    addOneToDbVal : function(x) { return x + db.GetVal()}
+    getUserCodeOrDefault : getUserCodeOrDefault
   };
 };
 
