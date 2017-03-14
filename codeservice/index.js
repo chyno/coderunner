@@ -23,7 +23,7 @@ exports.KataService = function (db) {
 
   const log = R.curry((prefix, data) => console.log(prefix, data));
   return {
-    addUser: R.curry((usr, kt) => {
+    addUser : R.curry((usr, kt) => {
 
       if (!kt.users) {
         kt.users = [];
@@ -36,7 +36,9 @@ exports.KataService = function (db) {
         kt.users.push(usr);
       }
       return kt;
-    })
+    }),
+
+    addOneToDbVal : function(x) { return x + db.GetVal()}
   };
 };
 
