@@ -3,12 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: {
-    main: [
-      './src/kata.js',
-      './src/doclib.js'
-    ]
-  },
+  entry: 'aurelia-bootstrapper',
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'public'),
