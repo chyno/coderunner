@@ -1,32 +1,39 @@
-var path = require('path');
+const path = require("path");
 const { AureliaPlugin } = require("aurelia-webpack-plugin");
+const BabiliPlugin = require("babili-webpack-plugin");
 
 module.exports = {
-  devtool: 'eval-source-map',
- entry: { "main": "aurelia-bootstrapper" },  // (1)
-  output: {
+  entry: { "main": "aurelia-bootstrapper" },  // (1)
+
+  output: {                                   // (2)
     filename: '[name].js',
     path: path.join(__dirname, 'public'),
     publicPath: '/public/'
- },
+  },
+
   resolve: {                                  // (3)
     extensions: [ ".js"],
     modules: ["src", "node_modules"],
   },
-  module: {
+
+  module: {                                   // (4)
     rules: [
-      { test: /\.html$/i, use: "html-loader" },
-    ],
-     loaders: [
-    {
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015']
-      }
-    }
+   { test: /\.html$/i, use: "html-loader" }
     ]
   },
-   plugins: [ new AureliaPlugin()]
-}
+
+ plugins: [
+    new AureliaPlugin({
+      dist: 'es2015',
+      features: { ie: false, svg: false, unparser: false, polyfills: "esnext" },
+    }),
+    new BabiliPlugin(),
+  ],
+};
+
+
+
+
+
+
+
