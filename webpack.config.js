@@ -46,7 +46,8 @@ module.exports = {
     new BabiliPlugin(),
     new HtmlWebpackPlugin({
         template: '!html-webpack-plugin/lib/loader!index.html',
-        filename: 'index.html'
+        filename: 'index.html',
+        includeAll: true
     }), 
   ],
 };
