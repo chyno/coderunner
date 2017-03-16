@@ -1,3 +1,4 @@
+
 const path = require("path");
 const { AureliaPlugin } = require("aurelia-webpack-plugin");
 const BabiliPlugin = require("babili-webpack-plugin");
@@ -7,7 +8,7 @@ module.exports = {
   entry: "aurelia-bootstrapper",
 
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "public"),
     publicPath: "/",
     filename: "[name].js",    
     chunkFilename: "[name].js"
@@ -50,3 +51,4 @@ module.exports = {
     }), 
   ],
 };
+ 

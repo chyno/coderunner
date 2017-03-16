@@ -1,12 +1,13 @@
+import { inject, PLATFORM } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
 
-export class App {
+@inject(Router)
+export class AppViewModel {
   configureRouter(config, router) {
-    config.title = 'Project Chyno';
-    config.map([
-      { route: ['', 'welcome'], name: 'welcome', moduleId: './welcome', nav: true, title: 'Welcome' },
-      { route: ['', 'welcome'], name: 'welcome', moduleId: './welcome', nav: true, title: 'Runner' }
-      ]);
-
     this.router = router;
+    config.map([
+      { route: '', name: 'hello', moduleId: PLATFORM.moduleName('page-hello', 'hello') },
+      { route: 'about', name: 'about', moduleId: PLATFORM.moduleName('page-about', 'about') },
+    ]);
   }
 }
